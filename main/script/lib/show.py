@@ -1,5 +1,9 @@
 # display number given a single flatten matrix
 
+from matplotlib import pyplot as plt
+import torch
+
+
 def show(matrix: torch.Tensor):
     """Display a number given a single flatten matrix
 
