@@ -1,4 +1,5 @@
 # import all the necessary libraries and modules
+import os
 import pickle
 from object import model as model
 from object.Data import Data as Data
@@ -11,9 +12,10 @@ seed = 123
 _cf = 8
 
 # load data
-train_path = "/data/train.csv"
-test_path = "/data/test.csv"
-submission_path = "/data/sample_submission.csv"
+train_path = os.path.join(os.path.abspath(os.path.join(__file__, "..", "..","..")), "data", "train.csv")
+test_path = os.path.join(os.path.abspath(os.path.join(__file__, "..", "..","..")), "data", "test.csv")
+submission_path = os.path.join(os.path.abspath(os.path.join(__file__, "..", "..","..")), "data", "sample_submission.csv")
+
 
 d = Data(
     train_path,
