@@ -8,6 +8,7 @@ from sklearn.model_selection import train_test_split
 
 import pandas as pd
 import numpy as np
+import pickle
 from typing import Literal
 
 import matplotlib.pyplot as plt
@@ -47,3 +48,10 @@ m.fit(
     lr_gamma=0.1,
     print_interval=1000,
 )
+
+# save model
+pickle.dump(m, open("../model/model.pkl", "wb"))
+
+# print success message
+print("model trained and saved successfully!")
+input("Press enter to close the program")
