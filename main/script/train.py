@@ -1,7 +1,7 @@
 # import all the necessary libraries and modules
 import os
 import pickle
-from object import model as model
+from object.model import Model as Model
 from object.Data import Data as Data
 from lib.show import show as show
 
@@ -29,7 +29,7 @@ d = Data(
 )
 
 # train model
-m = model(d, _cf, seed)
+m = Model(d, _cf, seed)
 m.fit(
     mode="train",
     epochs=32,
@@ -44,5 +44,5 @@ m.fit(
 pickle.dump(m, open(os.path.join(os.path.abspath(os.path.join(__file__, "..", "..")), "model", "model.pkl"), "wb"))
 
 # print success message
-print("model trained and saved successfully!")
-input("Press enter to close the program")
+print("Model Trained And Saved Successfully!")
+input("Press Enter To Close The Program")
