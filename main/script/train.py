@@ -9,12 +9,12 @@ from lib.show import show as show
 seed = 123
 
 # set Hyperparameters
-_cf = 16
+_cf = 12
 epochs=32
-iteration=100000
+iteration=5000
 lr=0.001
 lr_patience=100
-lr_gamma=0.5
+lr_gamma=0.1
 print_interval=1000
 
 # load data
