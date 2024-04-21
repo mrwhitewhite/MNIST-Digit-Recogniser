@@ -11,3 +11,5 @@
 8. CNN + Channel_factor=8(36266+P) = 97%
 9. CNN + Channel_factor=8(407722+P) + extended logit calc = 97%
 10. CNN + Channel_factor=16(80K+P) = 98%
+
+Submission Score = 97.332%
