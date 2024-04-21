@@ -9,7 +9,13 @@ from lib.show import show as show
 seed = 123
 
 # set Hyperparameters
-_cf = 8
+_cf = 16
+epochs=32
+iteration=100000
+lr=0.001
+lr_patience=100
+lr_gamma=0.5
+print_interval=1000
 
 # load data
 train_path = os.path.join(os.path.abspath(os.path.join(__file__, "..", "..", "..")), "data", "train.csv")
@@ -32,12 +38,12 @@ d = Data(
 m = Model(d, _cf, seed)
 m.fit(
     mode="train",
-    epochs=32,
-    iteration=1000,
-    lr=0.01,
-    lr_patience=100,
-    lr_gamma=0.1,
-    print_interval=1000,
+    epochs=epochs,
+    iteration=iteration,
+    lr=lr,
+    lr_patience=lr_patience,
+    lr_gamma=lr_gamma,
+    print_interval=print_interval,
 )
 
 # save model
