@@ -1,5 +1,13 @@
+from object.Data import Data as Data
+from object.CNN import CNN as CNN
+import torch.nn as nn
+import torch
+import torch.nn.functional as F
+import torch.optim as optim
+from typing import Literal
+
 class Model(nn.Module):
-    def __init__(self, data: Data, *args, **kwargs) -> None:
+    def __init__(self, data: Data,_cf:int,seed:int, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         torch.manual_seed(seed)
 
@@ -45,7 +53,7 @@ class Model(nn.Module):
         Returns:
             float: loss of cv2
         """
-        return self.loss(self.forward(d.x_cv2), d.y_cv2).item()
+        return self.loss(self.forward(self.d.x_cv2), self.d.y_cv2).item()
 
     def summary(self) -> None:
         """print str of number of parameter to be trauned"""
@@ -100,14 +108,14 @@ class Model(nn.Module):
 
         # specify data to be used
         if mode == "train":
-            X = d.x_train
-            Y = d.y_train
+            X = self.d.x_train
+            Y = self.d.y_train
         elif mode == "cv1":
-            X = d.x_cv1
-            Y = d.y_cv1
+            X = self.d.x_cv1
+            Y = self.d.y_cv1
         elif mode == "cv2":
-            X = d.x_cv2
-            Y = d.y_cv2
+            X = self.d.x_cv2
+            Y = self.d.y_cv2
 
         # total number of element in data
         n = len(X)

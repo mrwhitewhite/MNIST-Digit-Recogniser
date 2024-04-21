@@ -1,3 +1,7 @@
+import pandas as pd
+import torch
+from sklearn.model_selection import train_test_split
+
 class Data:
     """attributes:
     - Train (pd.DataFrame): original train data
@@ -21,6 +25,7 @@ class Data:
         train: str,
         test: str,
         submission: str,
+        seed: int,
         cv1_size: float = 0.1,
         cv2_size: float = 0.1,
     ) -> None:
