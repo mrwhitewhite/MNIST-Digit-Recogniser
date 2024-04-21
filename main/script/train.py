@@ -12,9 +12,11 @@ seed = 123
 _cf = 8
 
 # load data
-train_path = os.path.join(os.path.abspath(os.path.join(__file__, "..", "..","..")), "data", "train.csv")
-test_path = os.path.join(os.path.abspath(os.path.join(__file__, "..", "..","..")), "data", "test.csv")
-submission_path = os.path.join(os.path.abspath(os.path.join(__file__, "..", "..","..")), "data", "sample_submission.csv")
+train_path = os.path.join(os.path.abspath(os.path.join(__file__, "..", "..", "..")), "data", "train.csv")
+test_path = os.path.join(os.path.abspath(os.path.join(__file__, "..", "..", "..")), "data", "test.csv")
+submission_path = os.path.join(
+    os.path.abspath(os.path.join(__file__, "..", "..", "..")), "data", "sample_submission.csv"
+)
 
 
 d = Data(
@@ -39,7 +41,7 @@ m.fit(
 )
 
 # save model
-pickle.dump(m, open("../model/model.pkl", "wb"))
+pickle.dump(m, open(os.path.join(os.path.abspath(os.path.join(__file__, "..", "..")), "model", "model.pkl"), "wb"))
 
 # print success message
 print("model trained and saved successfully!")
